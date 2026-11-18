@@ -474,7 +474,7 @@ def is_date(value):
     try:
         my_date(value)
         return True
-    except ValueError:
+    except (ValueError, OverflowError):
         return False
 
 

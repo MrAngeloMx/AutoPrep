@@ -1,0 +1,16 @@
+# Credenciales
+keys.txt
+.env
+.env.*
+
+# Archivos de Python
+__pycache__/
+*.pyc
+.venv/
+
+# Datos y resultados temporales generados localmente
+/datasets/
+/tmp/
+
+# Archivos de instalación locales
+*.whl

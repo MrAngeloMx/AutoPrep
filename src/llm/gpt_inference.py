@@ -58,21 +58,25 @@ class GPTPOOL:
             return self.encode(ask, dim)
     
     def query(self, ask, get_lower=False):
-        try:
-            ans = self._query(ask, get_lower)
-            return ans
-        except Exception as e:
-            print(f'Error: {e}')
-            if 'maximum context length' in str(e):
-                raise ValueError(f'E(GPT): Maximum context length exceeded. Please reduce the input length.')
-            if 'You exceeded your current quota' in str(e):
-                print('!!!!!!!!!!!!!!!! Please change the key file !!!!!!!!!!!!!!!!')
-                time.sleep(60*1)
-            if 'Content Exists Risk' in str(e):
-                raise ValueError(f'E(GPT): Content Exists Risk. Please change the input.')
-
-            # time.sleep(2)
-            return self.query(ask, get_lower)
+        for attempt in range(MAX_ERR_RAISE_CNT):
+            try:
+                return self._query(ask, get_lower)
+            except Exception as error:
+                print(f'Error: {error}', flush=True)
+                if 'maximum context length' in str(error):
+                    raise ValueError('E(GPT): Maximum context length exceeded. Please reduce the input length.') from error
+                if 'Content Exists Risk' in str(error):
+                    raise ValueError('E(GPT): Content Exists Risk. Please change the input.') from error
+                if attempt + 1 == MAX_ERR_RAISE_CNT:
+                    raise RuntimeError(
+                        f'E(GPT): Request failed after {MAX_ERR_RAISE_CNT} attempts '
+                        f'for model {self.model}: {error}'
+                    ) from error
+                delay = 2
+                if 'You exceeded your current quota' in str(error):
+                    print('!!!!!!!!!!!!!!!! Please change the key file !!!!!!!!!!!!!!!!', flush=True)
+                    delay = 60
+                time.sleep(delay)
 
     def _query(self, ask, post_process=False, get_lower=False):
         key = self.get_key()

@@ -1,0 +1,5 @@
+dataset,variant,correct,total,accuracy
+WikiTQ,baseline,2015,4344,0.4638581952117864
+WikiTQ,autoprep,2081,4344,0.47905156537753224
+TabFact,baseline,1509,2024,0.7455533596837944
+TabFact,autoprep,1484,2024,0.733201581027668

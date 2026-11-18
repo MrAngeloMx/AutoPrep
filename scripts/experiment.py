@@ -62,7 +62,7 @@ class Experiment:
             if binder_eval.evaluate(
                 pred.split('|') if type(pred) == str else pred,
                 label.split('|') if type(label) == str else label,
-                'wikitq' if TASK_TYPE == 'tableqa' or 'finqa' else 'tab_fact',
+                'tab_fact' if TASK_TYPE == 'tablefact' else 'wikitq',
                 allow_semantic=allow_semantic,
                 question=rec['question']):
 

@@ -1,0 +1,42 @@
+[
+  {
+    "dataset": "WikiTQ",
+    "baseline": {
+      "correct": 2015,
+      "total": 4344,
+      "accuracy": 0.4638581952117864
+    },
+    "autoprep": {
+      "correct": 2081,
+      "total": 4344,
+      "accuracy": 0.47905156537753224
+    },
+    "difference_pp": 1.5193370165745845,
+    "paired": {
+      "both_correct": 1607,
+      "baseline_only_correct": 408,
+      "autoprep_only_correct": 474,
+      "both_wrong": 1855
+    }
+  },
+  {
+    "dataset": "TabFact",
+    "baseline": {
+      "correct": 1509,
+      "total": 2024,
+      "accuracy": 0.7455533596837944
+    },
+    "autoprep": {
+      "correct": 1484,
+      "total": 2024,
+      "accuracy": 0.733201581027668
+    },
+    "difference_pp": -1.2351778656126466,
+    "paired": {
+      "both_correct": 1287,
+      "baseline_only_correct": 222,
+      "autoprep_only_correct": 197,
+      "both_wrong": 318
+    }
+  }
+]

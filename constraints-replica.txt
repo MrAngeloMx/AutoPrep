@@ -1,0 +1,5 @@
+# Compatible transitive dependencies for the Python 3.9 replication environment.
+regex==2022.10.31
+dask==2023.5.0
+Werkzeug==2.2.3
+python-dateutil==2.8.2

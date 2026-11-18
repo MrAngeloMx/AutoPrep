@@ -1,0 +1,19 @@
+{
+  "source": "https://raw.githubusercontent.com/google-research/chain-of-table/1fd716c608f56e7d9d156ead432219c7ab9008af/data.zip",
+  "source_commit": "1fd716c608f56e7d9d156ead432219c7ab9008af",
+  "archive_git_blob_sha1": "d761ad106da39ec2f55de6dca82f82db6ca3eee8",
+  "test_sha256": "5aea64b089bb8b3575a2041f915c9509f0312eda7a9295eefec49ed49c2d0485",
+  "records": 2024,
+  "labels": {
+    "1": 1004,
+    "0": 1020
+  },
+  "model": "autoprep-qwen3b",
+  "task": "tablefact",
+  "temperature": 0.01,
+  "sample_seed": 42,
+  "sample_num": -1,
+  "max_input_limit": 7992,
+  "max_output_limit": 1024,
+  "python": "3.9.15 (main, Nov 24 2022, 14:39:17) [MSC v.1916 64 bit (AMD64)]"
+}

@@ -1,3 +1,15 @@
+# Replicación de AutoPrep con Ollama
+
+Comparación de NL2SQL y AutoPrep + NL2SQL con Qwen2.5-Coder 3B local.
+Evaluación sobre 4.344 ejemplos de WikiTQ y 2.024 ejemplos de TabFact.
+
+- [Procedimiento y resultados](REPLICACION.md)
+- [Ajustes del entorno](ENTORNO_REPLICA.md)
+- [Resultados en CSV](resultados/comparacion.csv)
+
+---
+
+
 # Multi-Agent Framework for Table Processing
 
 ![python](https://img.shields.io/badge/python-3.9.15-blue)

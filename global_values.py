@@ -13,7 +13,7 @@ MAX_OUTPUT_LIMIT = 1024
 MAX_INPUT_LIMIT = 8192-200
 
 LLM_HYPER_PARAMS = {
-    'temperature': 0,
+    'temperature': 0.01,
     'max_tok': MAX_OUTPUT_LIMIT,
 }
 AGENTS = ['nl2sqler', 'view_generator', 'cleaner', 'coltype_deducer', 'imputater', 'planner', 'filter', 'normalizer', 'augmenter', 'op2coder', 'coder', 'end2ender', 'cot_end2ender', 'programmer']
@@ -213,13 +213,13 @@ AUTOTQA_ROUND = 30
 
 DATA_PATH = r'XXX'
 
-LLM_NAME = 'deepseek-ai/DeepSeek-V2.5'
+LLM_NAME = 'autoprep-qwen3b'
 
 
 VERSION_NUM = '7.0.2.2'
-SAVE_STEP = 15
-MULPROCESS_CNT = 15
-SAMPLE_NUM = 15
+SAVE_STEP = 1
+MULPROCESS_CNT = 1
+SAMPLE_NUM = -1
 
 TABLELLM_VERSION = f'{VERSION_NUM}AutoPrep-{TASK_TYPE}-{SPLIT}-{LLM_NAME.replace("/", "_").split("-")[0]}'
 MAX_ERR_RAISE_CNT = 4
@@ -229,6 +229,6 @@ debug = True
 cut_log = False
 
 KEY_FILE = 'keys.txt'
-OPENAI_BASE_URL = None
+OPENAI_BASE_URL = 'http://127.0.0.1:11434/v1'
 
 LLM_DICT = {agent: LLM_NAME for agent in AGENTS}
